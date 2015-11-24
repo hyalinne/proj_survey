@@ -1,24 +1,23 @@
-/* Globals */
+/* 검은색 : 424242
+ * 밝은 회색 : E9E9E9
+ * 회색 : BCBCBC
+ * 주황 : F90
+ * 퍼렁 : 3299BB */
 
-/* Links */
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #BCBCBC;
 }
 
-/* Custom default button */
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
   color: #424242;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  text-shadow: none;
+  background-color: #E9E9E9;
+  border: 1px solid #E9E9E9;
 }
-
-
-/* Base structure */
 
 html,
 body {
@@ -31,7 +30,6 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
   width: 100%;
@@ -49,7 +47,6 @@ body {
   margin-left: auto;
 }
 
-/* Padding for spacing */
 .inner {
   padding: 30px;
 }
@@ -79,8 +76,6 @@ body {
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -111,9 +106,51 @@ body {
 
 
 /*Footer */
-
 .footer {
   color: #E9E9E9;
+}
+
+/* Sigin in */
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #E9E9E9;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 
