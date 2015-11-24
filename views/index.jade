@@ -1,30 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-
-  .site-wrapper
-    .site-wrapper-inner
-      .cover-container
-        .masthead.clearfix
-          .inner
-            h3.masthead-brand Survey Form
-            nav
-              ul.nav.masthead-nav
-                li.active
-                  a(href="#") Home
-                li
-                  a(href="#") Sign in
-                li
-                  a(href="#") Register
-  
-      .inner.cover
-        h1.cover-heading 당신을 위한 설문조사를 만들어보세요.
-        p.lead 지금 로그인을 하고 당신이 필요한 설문조사를 만들어 친구들에게 보내세요!
-        p.lead
-          a.btn.btn-lg.btn-default(href="#") Sign In
-      
-      .mastfoot
-        .inner
-          p Copyright ⓒ 2015 by hyalinne
+  h1= title  
+    .inner.cover
+      h1.cover-heading 당신을 위한 설문조사를 만들어보세요.
+      p.lead 지금 로그인을 하고 당신이 필요한 설문조사를 만들어 친구들에게 보내세요!
+      p.lead
+        a.btn.btn-lg.btn-default(href="#") Sign In

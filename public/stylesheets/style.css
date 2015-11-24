@@ -1,6 +1,4 @@
-/*
- * Globals
- */
+/* Globals */
 
 /* Links */
 a,
@@ -13,24 +11,22 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #424242;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
 }
 
 
-/*
- * Base structure
- */
+/* Base structure */
 
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #424242;
 }
 body {
-  color: #fff;
+  color: #424242;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -59,9 +55,7 @@ body {
 }
 
 
-/*
- * Header
- */
+/* Header */
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -78,7 +72,7 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
+  color: #424242; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
@@ -91,8 +85,8 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #424242;
+  border-bottom-color: #424242;
 }
 
 @media (min-width: 768px) {
@@ -105,9 +99,7 @@ body {
 }
 
 
-/*
- * Cover
- */
+/* Cover*/
 
 .cover {
   padding: 0 20px;
@@ -118,19 +110,14 @@ body {
 }
 
 
-/*
- * Footer
- */
+/*Footer */
 
-.mastfoot {
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
+.footer {
+  color: #E9E9E9;
 }
 
 
-/*
- * Affix and center
- */
+/* Response */
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */
