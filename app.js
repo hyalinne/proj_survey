@@ -10,6 +10,7 @@ var flash = require('connect-flash');
 var mongoose   = require('mongoose');
 
 var routes = require('./routes/index');
+var users = require('./routes/users');
 var surveys = require('./routes/surveys');
 
 var app = express();
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
 
 app.use('/', routes);
+app.use('/users', users);
 app.use('/surveys', surveys);
 
 // catch 404 and forward to error handler
