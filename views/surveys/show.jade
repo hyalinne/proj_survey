@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h1= survey.title
+  h3 by #{survey.email}
+  .well= survey.content
+  
+  hr
+  h3 Question (#{survey.numQuestion})
+  table.table
+    tr
+      th question
+      th answer number
+    each question in questions
+      tr
+        td
+          a(href='/surveys/' + survey._id + '/questions/' + question._id)= question.content
+        td= question.numAnswer
+  
+  form.form-inline(action='/surveys/' + survey._id + '/questions', method='POST')
+    .form-group
+      label.sr-only(for='content') content
+      input.form-control(name='content', size=50, placeholder='content')
+    button.btn.btn-info 질문추가
+    
+  hr
+  a.btn.btn-default(href='/surveys') 목록 
+  

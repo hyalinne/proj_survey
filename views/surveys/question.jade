@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1= question.content
+  
+  hr
+  h3 Question (#{question.numAnswer})
+  table.table
+    tr
+      th answer
+    each answer in answers
+      tr
+        td= answer.content
+  
+  form.form-inline(action='/surveys/' + surveyid + '/questions/' + question._id + '/answers', method='POST')
+    .form-group
+      label.sr-only(for='content') content
+      input.form-control(name='content', size=50, placeholder='content')
+    button.btn.btn-info 답변추가
+    
+  hr
+  a.btn.btn-default(href='/surveys/' + surveyid) 목록 
