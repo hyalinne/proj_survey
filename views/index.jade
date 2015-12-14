@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Survey for U
+  div
+    h1 Survey for You
+  
+  div
+    h1 설문 목록
+    table.table
+      tr
+        th 제목
+        th 작성일
+      each survey in surveys
+        tr
+          td
+            a(href='/surveys/#{survey.id}')= survey.title
+          td= moment(survey.createdAt).format('YYYY/MM/DD')

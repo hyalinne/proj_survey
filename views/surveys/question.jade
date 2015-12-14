@@ -4,19 +4,28 @@ block content
   h1= question.content
   
   hr
-  h3 Question (#{question.numAnswer})
-  table.table
-    tr
-      th answer
-    each answer in answers
+  h3 질문에 대한 답변
+  if question.type == 1
+    table.table
       tr
-        td= answer.content
-  
-  form.form-inline(action='/surveys/' + surveyid + '/questions/' + question._id + '/answers', method='POST')
-    .form-group
-      label.sr-only(for='content') content
-      input.form-control(name='content', size=50, placeholder='content')
-    button.btn.btn-info 답변추가
+        th 답변
+        th 선택 수
+      each answer in answers
+        tr
+          td= answer.content
+          td= answer.numSelected
     
+    form.form-inline(action='/surveys/survey/' + surveyid + '/question/' + question._id, method='POST')
+      .form-group
+        label.sr-only(for='content') content
+        input.form-control(name='content', size=50, placeholder='content')
+      button.btn.btn-info 답변추가
+  else
+    table.table
+      tr
+        th 답변
+      each answer in answers
+        tr
+          td= answer.content
   hr
-  a.btn.btn-default(href='/surveys/' + surveyid) 목록 
+  a.btn.btn-default(href='/surveys/survey/' + surveyid) 목록 

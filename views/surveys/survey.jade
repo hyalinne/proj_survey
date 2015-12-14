@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1= survey.title
+  .well= survey.content
+  
+  hr
+  h3 질문
+  table.table
+    tr
+      th 질문
+    each question in questions
+      tr
+        td
+          a(href='/surveys/' + survey._id + '/question/' + question._id)= question.content
+  
+  hr
+  a(href='/surveys/complete/' + survey._id) 설문완료

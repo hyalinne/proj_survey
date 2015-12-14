@@ -6,16 +6,12 @@ block content
   table.table
     tr
       th 제목
-      th 작성자
-      th 질문
       th 작성일
     each survey in surveys
       tr
         td
-          a(href='/surveys/#{survey.id}')= survey.title
-        td= survey.email
-        td= survey.numComment
+          a(href='/surveys/survey/#{survey.id}')= survey.title
         td= moment(survey.createdAt).format('YYYY/MM/DD')
 
 
-  a.btn.btn-primary(href='/surveys/new') 설문작성
+  a.btn.btn-primary(href='/surveys/new/#{currentUser._id}') 설문작성

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1= question.content
+  
+  hr
+  h3 답변 등록
+  
+  form.form-inline(action='/surveys/' + surveyid + '/question-text/' + question._id, method='POST')
+    if question.type == 2
+      .form-group
+        input.form-control(type='text', name='content', placeholder='답변')
+    else
+      .form-group
+        textarea.form-control(type='text', name='content', placeholder='의견을 입력하세요')
+    button.btn.btn-info 답변등록
+    
+  hr
+  a.btn.btn-default(href='/surveys/' + surveyid) 목록 

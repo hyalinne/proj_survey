@@ -5,8 +5,8 @@ var mongoose = require('mongoose'),
 var schema = new Schema({
   survey: {type: Schema.Types.ObjectId, required: true, trim: true},
   content: {type: String, required: true, trim: true},
-  numAnswer: {type: Number, default: 0},
-  createdAt: {type: Date, default: Date.now}
+  // Quesiton type 1 = select, 2 = text, 3 = long text
+  type: {type: Number, required: true, trim: true}
 }, {
   toJSON: {virtuals: true},
   toObject: {virtuals: true}

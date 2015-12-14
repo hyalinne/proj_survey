@@ -2,15 +2,6 @@ var express = require('express'),
     User = require('../models/User');
 var router = express.Router();
 
-function needAuth(req, res, next) {
-    if (req.session.user) {
-      next();
-    } else {
-      req.flash('danger', '로그인이 필요합니다.');
-      res.redirect('/signin');
-    }
-}
-
 function validateForm(form, options) {
   var name = form.name || "";
   var email = form.email || "";
@@ -41,7 +32,7 @@ function validateForm(form, options) {
 }
 
 /* GET users listing. */
-router.get('/', needAuth, function(req, res, next) {
+router.get('/', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) {
       return next(err);

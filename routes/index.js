@@ -1,11 +1,18 @@
 var express = require('express'),
-    User = require('../models/User');
+    User = require('../models/User'),
+    Survey = require('../models/Survey');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  Survey.find({}, function(err, surveys) {
+    if (err) {
+      return next(err);
+    }
+    res.render('index', {surveys: surveys});
+  });
 });
+
 router.get('/signin', function(req, res, next) {
   res.render('signin');
 });
@@ -23,7 +30,7 @@ router.post('/signin', function(req, res, next) {
     } else {
       req.session.user = user;
       req.flash('success', '로그인 되었습니다.');
-      res.redirect('/todos');
+      res.redirect('/');
     }
   });
 });

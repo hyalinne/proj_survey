@@ -6,23 +6,42 @@ block content
   .well= survey.content
   
   hr
-  h3 Question (#{survey.numQuestion})
+  h3 질문 목록
   table.table
     tr
-      th question
-      th answer number
+      th 질문
+      th 질문 형식
     each question in questions
       tr
         td
-          a(href='/surveys/' + survey._id + '/questions/' + question._id)= question.content
-        td= question.numAnswer
+          if question.type == 1
+            a(href='/surveys/survey/' + survey._id + '/question/' + question._id)= question.content
+          else 
+            a(href='/surveys/survey/' + survey._id + '/question-text/' + question._id)= question.content
+        td
+          case question.type
+            when 1
+              | 객관식
+            when 2
+              | 주관식
+            when 3
+              | 의견
   
-  form.form-inline(action='/surveys/' + survey._id + '/questions', method='POST')
+  form.form-inline(action='/surveys/survey/' + survey._id + '/question', method='POST')
     .form-group
       label.sr-only(for='content') content
       input.form-control(name='content', size=50, placeholder='content')
+    .form-group
+      input(type='radio', name='type', value=1, checked) 
+      label(for='type') 객관식
+    .form-group
+      input(type='radio', name='type', value=2)
+      label(for='type') 주관식
+    .form-group
+      input(type='radio', name='type', value=3) 
+      label(for='type') 의견
     button.btn.btn-info 질문추가
     
   hr
-  a.btn.btn-default(href='/surveys') 목록 
+  a.btn.btn-default(href='/surveys/user/' + currentUser._id) 목록 
   

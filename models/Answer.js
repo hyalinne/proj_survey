@@ -5,8 +5,7 @@ var mongoose = require('mongoose'),
 var schema = new Schema({
   question: {type: Schema.Types.ObjectId, required: true, trim: true},
   content: {type: String, required: true, trim: true},
-  numSelected:  {type: Number, default : 0},
-  createdAt: {type: Date, default: Date.now}
+  numSelected:  {type: Number, default : 0}
 }, {
   toJSON: {virtuals: true},
   toObject: {virtuals: true}

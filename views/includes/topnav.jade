@@ -10,10 +10,12 @@
         i.fa.fa-home
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
-          a(href='/surveys') Survey
-        li
-          a(href='/users') Users
+        if (currentUser)
+          li
+            a(href='/surveys/user/#{currentUser._id}') Survey
+          li
+            a(href='/users') Users
+        else
       ul.nav.navbar-nav.navbar-right
         if (!currentUser) 
           li
